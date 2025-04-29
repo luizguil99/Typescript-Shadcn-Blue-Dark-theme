@@ -90,9 +90,9 @@
   }
 }
 
-/* Adiciona a classe dark ao html por padrão - usando JavaScript */
+
 @layer base {
-  /* Esta parte será executada quando o CSS for carregado */
+  
   html:not(.light) {
     color-scheme: dark;
   }
