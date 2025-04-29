@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 90%;
+
+    --card: 0 0% 2%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 2%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 195 100% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 7%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 0 0% 5%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 195 100% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 70% 35%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 195 50% 20%;
+    --input: 0 0% 7%;
+    --ring: 195 100% 50%;
+
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 195 100% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 5%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 195 50% 15%;
+    --sidebar-ring: 195 100% 50%;
+
+    --radius: 0.5rem;
+
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-heading: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'SF Mono', SFMono-Regular, ui-monospace, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 195 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 195 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 195 50% 85%;
+    --input: 0 0% 90%;
+    --ring: 195 100% 50%;
+
+    --sidebar-background: 195 10% 98%;
+    --sidebar-foreground: 0 0% 25%;
+    --sidebar-primary: 195 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 195 30% 95%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 195 10% 90%;
+    --sidebar-ring: 195 100% 50%;
+
+    --radius: 0.5rem;
+  }
+}
+
+/* Adiciona a classe dark ao html por padrão - usando JavaScript */
+@layer base {
+  /* Esta parte será executada quando o CSS for carregado */
+  html:not(.light) {
+    color-scheme: dark;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer components {
+  .btn, button {
+    @apply rounded-md border border-sky-600/30;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-sky-600 animate-text-shimmer bg-[length:200%_auto];
+  }
+  
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+  
+  .glass-dark {
+    @apply bg-black/90 backdrop-blur-md border border-sky-900/20;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+}
